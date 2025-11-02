@@ -1,0 +1,28 @@
+// 4. Object Destructuring
+// Given the following object:
+// const person = {
+//     name: 'Alice',
+//     age: 25,
+//     address: {
+//         city: 'New York',
+//         country: 'NY'
+//     }
+// };
+// Write a function that extracts the name and city properties and logs the sentence: "Alice lives in New York." It should also access and log the address object.
+const person = {
+    name: 'Alice',
+    age: 25,
+    address: {
+        city: 'New York',
+        country: 'NY'
+    }
+};
+
+let extract = (person)=>{
+    let {name, age, address:{city},address:{country}} = person;
+    console.log(`${name} lives in ${city}-${country}`)
+}
+extract(person)
+
+// output
+// Alice lives in New York-NY
