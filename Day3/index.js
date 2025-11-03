@@ -26,8 +26,8 @@ function Product(name , price,category){
     this.category= category;
 }
 function getCostliestProduct (products){
-    var highestpriceProduct = products[0];
-    products.forEach(product=>{
+    var highestpriceProduct = this[0];
+    this.forEach(product=>{
         if(product.price > highestpriceProduct.price){
             highestpriceProduct= product;
         }
@@ -39,8 +39,8 @@ function displayData(products){
     var mainsection = document.getElementsByClassName('main-section')[0]
     
     var highestPrice = document.createElement('div')
-    var highestPriceProduct = getCostliestProduct.apply(null,[products])
-    
+    var highestPriceProduct = getCostliestProduct.call(products)
+    console.log(highestPriceProduct)
     highestPrice.textContent= `The Costliest product is ${highestPriceProduct.name} with price ${highestPriceProduct.price}`
     
     mainsection.appendChild(highestPrice);
