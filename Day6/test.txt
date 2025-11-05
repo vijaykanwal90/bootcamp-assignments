@@ -10,4 +10,6 @@ edit for squash using merge1
 edit for squash using merge2
 
 
+edit in f1 for squash merge
+edit in f1 for squash merge
 
