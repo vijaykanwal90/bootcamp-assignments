@@ -71,6 +71,8 @@ question 10: Difference between git fetch and git pull
 question 11: How to squash commits?
         squash means merging multiple commits into a single commit to make history clean and readable.
         ways to squash commits
-            1. git rebase 
+            1. using git rebase 
                 rebase n commits eg git rebase -i HEAD~3
+                make one commit as pick and other as squash ( pick should be the oldest one)
+            2. using git merge 
                 

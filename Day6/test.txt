@@ -6,3 +6,6 @@ edit for squash try 01
 edit for squash try 02
 edit for squash try 03
 
+edit for squash using merge1
+
+
