@@ -75,4 +75,22 @@ question 11: How to squash commits?
                 rebase n commits eg git rebase -i HEAD~3
                 make one commit as pick and other as squash ( pick should be the oldest one)
             2. using git merge 
+                make changes on the feature branch and commit 
+                switch to main branch
+                then merge the feature branch into main
+                git merge --squash feature
+
+question 12 : Difference between git reset and git revert
+        git reset : it moves the head to a particular commit and rewrites the history as well 
+            eg A - B - C - D  <-HEAD
+            if git reset B  moves the branch to B and behave like C and D never exists before
+        
+        git revert : it inverts the changes of the particular commit and keeps the history
+            eg A - B - C - D - E 
+            if git revert D will give changes without D (like commit D was never performed)
+
+        if i do git revert D will move my pointer to E commit and later on i can get the changes done in D but in case of git reset D i can't get the changes after D 
+
+question 13 : Delete branch from local and remote 
+        git branch -d branchname
                 
