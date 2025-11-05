@@ -1,0 +1,6 @@
+command to create user
+sudo useradd devops
+command to set password
+sudo passwd devops
+command to add sudo permission
+sudo usermod -aG sudo devops

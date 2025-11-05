@@ -1,0 +1,1 @@
+find /etc -type f -name "*.conf" | sort > /home/vijay-singh-kanwal/Documents/config_list.txt

@@ -1,0 +1,1 @@
+cut -d: -f7 /etc/passwd | sort | uniq | wc -l > /home/vijay-singh-kanwal/Documents/shell_count.txt

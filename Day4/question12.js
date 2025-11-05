@@ -6,29 +6,32 @@
 // clonedObj.b.c = 42;
 // console.log(obj.b.c); // Output: 2
 
-
 let deepClone = (obj) => {
-    if (obj === null || typeof obj !== 'object') {
-        return obj;
+  
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  let clone = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clone[key] = deepClone(obj[key]);
     }
-
-    let clone = Array.isArray(obj) ? [] : {};
-
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            clone[key] = deepClone(obj[key]);
-        }
-    }
-
-    return clone;
-}
+  }
+  return clone;
+};
 
 const obj = { a: 1, b: { c: 2 } };
+const arr = [1, 2, 3, 4];
 
-const obj1 = deepClone(obj);
+const obj1 = deepClone(arr);
 
-obj1.b.c = 5;
-console.log(obj1.b.c); // 5
+console.log(obj1, "obj1");
+
+
+// obj1.b.c = 5;
+// console.log(obj1.b.c); // 5
 
 console.log(obj.b.c); // 2
 
@@ -36,8 +39,7 @@ const obj2 = deepClone(obj);
 console.log(obj2.b.c); // 2
 
 if (obj1 === obj2) {
-    console.log("same reference");
+  console.log("same reference");
 } else {
-    console.log("different reference");
+  console.log("different reference");
 }
-

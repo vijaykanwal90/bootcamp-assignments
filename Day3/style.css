@@ -8,7 +8,6 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
     gap: 20px;
     padding: 10px;
-
 }
 
 .product-box{
@@ -16,7 +15,6 @@ body{
     border-radius: 4px;
     background-color: rgb(157, 142, 142);
     padding: 10px;
-
 }
 .original-price {
     text-decoration: line-through;

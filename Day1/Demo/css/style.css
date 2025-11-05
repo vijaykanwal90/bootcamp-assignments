@@ -36,13 +36,13 @@ body {
 }
 
 .primary-button {
-  background: #4CAF4F;
+  background: #4caf4f;
   color: #fff;
 }
 
 .secondary-button {
   background: transparent;
-  color: #4CAF4F;
+  color: #4caf4f;
 }
 
 .flex-center {
@@ -73,12 +73,13 @@ body {
   font-size: 28px;
   font-weight: 700;
   color: #4D4D4D;
+  line-height: 36px;
 }
 
 .heading-4 {
   font-size: 20px;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #4CAF4F;
 }
 
 .text-center {
@@ -97,7 +98,7 @@ body {
 }
 
 .care-container {
-  padding-top: 48px;
+  margin-top: 48px;
 }
 
 .care-image-container {
@@ -112,7 +113,7 @@ body {
 
 .care-text {
   position: absolute;
-  background: #F5F7FA;
+  background: #f5f7fa;
   width: 80%;
   left: 10%;
   height: 135px;
@@ -175,6 +176,76 @@ body {
   box-shadow: 0px 2px 4px 0px rgba(171, 190, 209, 0.2);
 }
 
+.pixel-grade-section {
+  display: flex;
+  height: 275px;
+  margin: 42px auto;
+  gap: 32px;
+  justify-content: center;
+}
+
+.pixel-left-section img {
+  height: 305px;
+  width: 442px;
+}
+
+.pixel-right-section {
+  height: 160px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pixel-button {
+  width: 130px;
+  border-radius: 4px;
+  padding: 10px 8px;
+  margin-top: 4px;
+}
+
+.business-section {
+  background-color: #F5F7FA;
+  margin-top: 74px;
+}
+
+.business-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 72px;
+  height: 320px;
+}
+
+.business-left-section {
+  margin: 74px auto;
+  gap: 8px;
+  height: 120px;
+  text-align: left;
+}
+
+.business-left-heading {
+  color: #4CAF4F;
+}
+
+.business-right-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  width: 540px;
+  height: 160px;
+  padding: 20px auto;
+}
+
+.business-right-box {
+  display: flex;
+  gap: 16px;
+}
+.business-right-box img {
+  width: 48px;
+  height: 48px;
+}
+
 .logos-container img {
   width: 30px;
   height: 30px;
@@ -188,16 +259,27 @@ body {
   align-items: center;
 }
 
+.customer-section {
+  background-color: #F5F7FA;
+}
+
 .customer-container {
   background-color: #F5F7FA;
   display: flex;
   justify-content: center;
-  padding: 32px 144px;
-  margin: 40px auto;
   box-sizing: border-box;
+  padding: 32px 32px;
+  gap: 32px;
 }
 
 .customer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 10px;
+}
+
+.customer-review {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -296,7 +378,8 @@ h4 {
   list-style: none;
 }
 
-.footer-company ul, .footer-support ul {
+.footer-company ul,
+.footer-support ul {
   display: flex;
   flex-direction: column;
   gap: 12px;

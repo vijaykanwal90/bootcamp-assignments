@@ -1,0 +1,4 @@
+Find and terminate the top memory-consuming process on your system
+
+ps aux --sort=-%mem | head -n 5
+

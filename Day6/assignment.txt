@@ -1,0 +1,34 @@
+question 1: configure ssh key
+solution: first create an ssh key 
+    ssh-keygen -t ed25519 -C "vijaykanwal90@gmail.com"
+
+    list the keys
+    $ ls ~/.ssh
+    view the public key
+    $ cat ~/.ssh/id_ed25519.pub
+    
+    copy that key 
+    under the ssh & gpg key section
+    click on add new ssh
+    give a title
+    past the key you copied earlier
+
+question2 : Create a repository on github account.
+        sign in github
+        create a new repository - ck-day6
+
+question3 : Clone the above repository 
+    clone via ssh
+    git clone 
+
+
+question4 : Create a new file, say test.txt, in main/master branch. Make some changes to this file and commit the changes.
+        file created 
+        git add test.txt ( done through Gui)
+        git commit -m "day6- file created and first commit "
+        git push
+
+question6 :Create two branches from main/master branch, say f1 and f2.
+        
+
+
