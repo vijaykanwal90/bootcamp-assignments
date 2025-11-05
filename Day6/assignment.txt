@@ -28,7 +28,49 @@ question4 : Create a new file, say test.txt, in main/master branch. Make some ch
         git commit -m "day6- file created and first commit "
         git push
 
-question6 :Create two branches from main/master branch, say f1 and f2.
-        
+question 5 and 6 :Create two branches from main/master branch, say f1 and f2.
+        create two branch git branch f1 and git branch f2
+        switch to f1 - git switch f1 
+        make some changes -> add them to staging -> commit the changes -> push the changes to origin git push origin f1
+        switch to f2 
+        make some changes -> add them to staging -> commit the changes -> push the changes to origin git push origin f2
+        now switch to  the main branch
+        git merge f1 - everything is fine
+        git merge f2 - now encounterd git merge conflict
+        merge conflict resolved through merge editor and git commit -m "message" new comment added
+        git push 
 
 
+question 7: Show how divergence occurs in a branch.
+        Suppose we have a main branch and we created a branch from it ( feature-1 branch) and started working on the feature and there are changes on the main branch as well so it will create the divergence and if later on we want to get those changes from the main we  merge the main branch to our feature branch or rebase
+        to merge- $ git merge main  - extra commit added 
+        to rebase $ git rebase main - keeps clean history  no extra commit added
+
+question 8: Difference between git init and git clone.
+        git init - git init is command to initialize a new git repository on a existing directory on our local machine to manage and track the changes . It creates a .git file which store all the information
+
+        git clone - git clone is used to create a copy of an existing git repository and get the all the history of git. It is generally done from a github
+
+question 9 : Difference between git branch and checkout
+        git branch - this command can be used in several way 
+            to see the current and all the branches 
+                git branch
+            to create a new branch
+                git branch branchname
+            to delete branch
+                git branch -d branchname
+        git checkout 
+            to switch branch
+                git checkout branchname
+            to create a new branch and switch
+                git checkout -b newbranch
+question 10: Difference between git fetch and git pull
+        git fetch - It download the remote changes to our local branch but do not apply them . we can compare those changes and if they seem right them can merge them manually using git merge branch
+        git pull - It also download the remote changes but it updates the local changes and could give us the merge conflicts
+
+question 11: How to squash commits?
+        squash means merging multiple commits into a single commit to make history clean and readable.
+        ways to squash commits
+            1. git rebase 
+                rebase n commits eg git rebase -i HEAD~3
+                
