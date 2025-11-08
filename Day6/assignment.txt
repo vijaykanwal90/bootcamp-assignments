@@ -73,12 +73,12 @@ question 11: How to squash commits?
         ways to squash commits
             1. using git rebase 
                 rebase n commits eg git rebase -i HEAD~3
-                make one commit as pick and other as squash ( pick should be the oldest one)
+                make one commit as pick and other as squash ( pick should be the older one)
             2. using git merge 
                 make changes on the feature branch and commit 
                 switch to main branch
                 then merge the feature branch into main
-                git merge --squash feature
+                git merge --squash feature ( it makes a extra commit )
 
 question 12 : Difference between git reset and git revert
         git reset : it moves the head to a particular commit and rewrites the history as well 

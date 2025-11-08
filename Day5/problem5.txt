@@ -1,0 +1,14 @@
+Generate an SSH key pair and configure it for two different remote servers.
+
+1. Create a SSH key pair ( public + private keys)
+    ssh-keygen -t rsa -b "vijaykanwal90@gmail.com" 
+    here -t rsa - is type of algorithm
+    -b 4096 is the number of bits in the key
+    -C " email@.com" to add a email label to identify the key 
+2. Copy the public key into the authorized 
+    cat ~/.ssh/id_rsa.public
+    ssh-copy-id yogeshmishra@10.1.210.15 and second one is ssh-copy-id vikash-kumar-tiwari@10.1.210.13
+
+    we can make a shortcut for connecting to remote server as well so that we do not have to type the username and the IP address
+
+    

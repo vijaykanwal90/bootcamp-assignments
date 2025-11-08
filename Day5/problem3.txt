@@ -1,0 +1,24 @@
+Connect to a remote server, create a directory, and copy files into it using SCP.
+
+steps:-
+1. install the openssh-server
+    sudo apt install openssh-server
+
+2. Enable and start openssh
+    sudo systemctl enable ssh
+    sudo systemctl start ssh
+    sudo systemctl status ssh
+
+3. Allow SSH through firewall
+
+    sudo ufw allow ssh
+    sudo ufw enable
+    sudo ufw status
+
+4. Connecting to other server
+   ssh username@ip-address ( to get the IP address ip addr show)
+    it will ask password of the server you want to Connect
+
+5. Sending file 
+    scp filename targetUsername@IP :/ target location 
+    eg. scp scp-text.txt yogeshmishra :/home/yogeshmishra/Documents

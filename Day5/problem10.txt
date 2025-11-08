@@ -1,0 +1,3 @@
+reset the current user password and reboot the system the shell_count
+sudo passwd devops
+sudo reboot

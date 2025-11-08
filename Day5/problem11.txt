@@ -1,0 +1,8 @@
+Zip the content of your home directory via tar and send it via scp to other person laptop.
+
+
+Command to zipp the file
+    tar -cvf /home/vijay-singh-kanwal/Documents/vijay-zip.tar.gz /home/vijay-singh-kanwal/Documents/
+
+sending the file
+    scp vijay-zip.tar.gz yogeshmishra@10.1.210.15:/home/yogeshmishra/Documents
