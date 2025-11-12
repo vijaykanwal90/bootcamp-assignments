@@ -1,6 +1,6 @@
 Basic key actions  for working on vim
 1. To switch on normal mode - Esc
-2. To switch to insert mode - id
+2. To switch to insert mode - i
 3. cursor movements ( h-left , j-down, k-up , l-right)
 4. Delete character under cursor - x
 5. Delete current line - dd
@@ -11,5 +11,5 @@ Basic key actions  for working on vim
 10. Redo the last undone change - ctrl + r
 11. Save the file - :w
 12. Quite without change - :q 
-13. Save and quire - :wq 
+13. Save and quite - :wq 
 14. Quite without saving changes - :q!

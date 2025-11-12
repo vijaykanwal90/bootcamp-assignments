@@ -1,7 +1,7 @@
 package org.example;
 
 class RethrowException {
-    public void method1 (int a , int b){
+    public int method1 (int a , int b){
           try {
               System.out.println(a/b);
 
@@ -9,15 +9,21 @@ class RethrowException {
           catch (ArithmeticException e){
               throw e;
           }
+          finally{
+            System.out.println("This is finnally");
+            return 0;
+          }
     }
-    public void method2 (int a , int b){
+    public void method2 (int a , int b) throws Exception{
         try {
             method1(a,b);
 
         }
+        
         catch (ArithmeticException e){
-            throw e;
+            throw new Exception(e);
         }
+        
     }
 
     public void method3 (int a , int b){
@@ -25,7 +31,7 @@ class RethrowException {
             method2(a,b);
 
         }
-        catch (ArithmeticException e){
+        catch (Exception e){
             System.out.println("Exception thrown at method 3 " + e.getMessage());
             throw e;
         }

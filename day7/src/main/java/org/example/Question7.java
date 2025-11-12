@@ -2,9 +2,12 @@ package org.example;
 
 class StaticCounter {
     static int counter;
+    private static final Object  lock = new Object();
     public StaticCounter(){
-
+        synchronized(lock){
         counter = counter +1;
+
+        }
     }
 
 }
