@@ -14,17 +14,22 @@ function App() {
         setIsAuthenticated(true)
         navigate('/')
     }
-    useEffect(()=>{
-      
-         
+    useEffect(()=>{ 
       let token =  localStorage.getItem('isAuthenticated')
-     
       if(token==='true'){
         setIsAuthenticated(true)
-        navigate('/')
+        // navigate('/')
       }
       
     },[])
+    useEffect(()=>{
+      if(isAuthenticated){
+        navigate('/dashboard')
+      }
+      else {
+        navigate('/login')
+      }
+    },[isAuthenticated,navigate])
   return (
     <>
        <Routes>
