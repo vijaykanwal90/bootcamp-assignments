@@ -1,50 +1,55 @@
-import DigitalClock from './components/DigitalClock';
-import Dashboard from './pages/Dashboard';
-import Counter from './components/Counter';
-import Login from './pages/Login';
-import PageNotFound from './pages/PageNotFound';
-import ProtectedRoute from './components/ProtectedRoute';
-import {Routes,Route,useNavigate} from 'react-router-dom';
-import { useEffect, useState} from "react"
+import DigitalClock from "./components/DigitalClock/DigitalClock";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Counter from "./components/Counter/Counter";
+import Login from "./pages/Login/Login";
+import "./App.css"
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import Home from "./pages/Home/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 function App() {
-    const [isAuthenticated,setIsAuthenticated] = useState(false);
-    const navigate = useNavigate()
-    const handleLogin = ()=>{
-        localStorage.setItem("isAuthenticated","true");
-        setIsAuthenticated(true)
-        navigate('/')
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    localStorage.setItem("isAuthenticated", "true");
+    setIsAuthenticated(true);
+    navigate("/dashboard");
+  };
+  useEffect(() => {
+    const token = localStorage.getItem("isAuthenticated");
+    if (token === "true") {
+      setIsAuthenticated(true);
     }
-    useEffect(()=>{ 
-      let token =  localStorage.getItem('isAuthenticated')
-      if(token==='true'){
-        setIsAuthenticated(true)
-        // navigate('/')
-      }
-      
-    },[])
-    useEffect(()=>{
-      if(isAuthenticated){
-        navigate('/dashboard')
-      }
-      else {
-        navigate('/login')
-      }
-    },[isAuthenticated,navigate])
+  }, []);
+
   return (
     <>
-       <Routes>
-            <Route  path="/" element={<ProtectedRoute isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}> <Dashboard setIsAuthenticated={setIsAuthenticated}/></ProtectedRoute>}>
-            
-              <Route  path="counter" element={<Counter/>}/>
-              <Route  path="clock" element={<DigitalClock/>}/>
-            </Route>
-            <Route path='login' element={<Login isAuthenticated={isAuthenticated} handleLogin={handleLogin}/>}></Route>
-            <Route path='*' element={<PageNotFound/>}></Route>
-
-       </Routes>
-      
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        {/* protected Routes */}
+        <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
+          <Route
+            path="/dashboard"
+            element={<Dashboard setIsAuthenticated={setIsAuthenticated} />}
+          >
+          <Route  path="/dashboard/counter" element={<Counter />} />
+          <Route path="/dashboard/clock" element={<DigitalClock />} />
+          </Route>
+        </Route>
+        <Route
+          path="login"
+          element={
+            <Login
+              isAuthenticated={isAuthenticated}
+              handleLogin={handleLogin}
+            />
+          }
+        ></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
